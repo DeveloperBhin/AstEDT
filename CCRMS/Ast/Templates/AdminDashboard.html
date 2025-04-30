@@ -1,0 +1,399 @@
+{%load static%}
+{%include 'header.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOME | Admin Dashboard</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+ 
+  <style>
+    /* Root variables for consistent styling */
+    :root {
+      --primary-bg: #D9D9D9;
+      --secondary-bg: #CDC2A5;
+      --primary-color: darkorange;
+      --hover-bg: #310202;
+      --sidebar-bg: #155B7A;
+      --footer-bg: #ffffff;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      background-color: var(--primary-bg);
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .header {
+      background-color: var(--primary-bg);
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      padding: 10px 0;
+    }
+
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-link:hover {
+      color: #f3f3f3;
+    }
+
+    .nav-item button {
+      background: none;
+      border: none;
+      padding: 0;
+    }
+
+    .nav-item button:hover {
+      background-color: var(--hover-bg);
+    }
+
+    .push-menu {
+      position: fixed;
+      top: 60px;
+      left: -250px;
+      width: 250px;
+      height: calc(100vh - 60px);
+      background-color: var(--sidebar-bg);
+      color: white;
+      transition: left 0.3s ease;
+      z-index: 1050;
+    }
+
+    .push-menu.active {
+      left: 0;
+    }
+
+    .menu-toggle {
+      cursor: pointer;
+      background-color: var(--sidebar-bg);
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin-left: 15px;
+      font-size: 18px;
+    }
+
+    .main-content {
+      flex-grow: 1;
+      transition: margin-left 0.3s ease;
+    }
+
+    .main-content.shifted {
+      margin-left: 250px;
+    }
+
+    .footer {
+      background-color: var(--footer-bg);
+      text-align: center;
+      padding: 20px;
+    }
+
+    .footer a {
+      color: black;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .card img {
+      height: 400px;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+
+    .category-links a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      padding: 10px;
+    }
+
+    .category-links a:hover {
+      background-color: rgba(247, 243, 243, 0.97);
+    }
+    
+    .carousel-inner img {
+      height: 40vh; /* Adjust this value as needed */
+      width: 40%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+  }
+  
+  
+      a.no-underline {
+          text-decoration: none; /* Removes the underline */
+      }
+      .bt {
+       font-size: x-large;
+        cursor:pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .bt:hover {
+        background-color: rgb(16, 108, 184); /* Fallback color added */
+        cursor: pointer;
+    }
+    .button-container{
+      display:flex;
+      gap : 5px;
+    }
+    .content{
+      display:none;
+      margin-top : 5px;
+      padding:10px;
+      border:1px solid #007bff;
+      border-radius: 5px;
+      background-color:#f0f8ff;
+    }
+    
+    
+    
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+   <!-- Header -->
+  
+   <!-- Sidebar -->
+  
+
+  <!-- Sidebar -->
+ 
+  
+  
+    <div class="row" >
+      
+      <div class="col-md-2 col-sm-3" style=" background-color:rgb(6, 76, 180);">
+        <h3>Dashboard</h3>
+       
+        <h3>
+          <button class="btn btn-link text-white p-0" type="button" data-bs-toggle="collapse" data-bs-target="#dashboardCollapse1" aria-expanded="false" aria-controls="dashboardCollapse1" style="margin:10px; text-decoration:None;">
+            Report
+          </button>
+        </h3>
+      
+        <div class="collapse show" id="dashboardCollapse1">
+          <div class="d-inline-flex gap-1">
+            <a href="{% url 'register' %}"  class= "bt"style=" border-radius: 5px; border-color: #87ceeb; font-size: x-large; color: black; text-decoration: none;">
+              User Register
+            </a>
+            
+          </div>
+          <div class="d-inline-flex gap-1">
+            <a href="{% url 'register' %}"  class= "bt"style=" border-radius: 5px; border-color: #87ceeb; font-size: x-large; color: black; text-decoration: none;">
+              User Register
+            </a>
+            
+          </div>
+          
+        </div>
+        <h3>
+          <button class="btn btn-link text-white p-0" type="button" data-bs-toggle="collapse" data-bs-target="#dashboardCollapse2" aria-expanded="false" aria-controls="dashboardCollapse2" style="margin:10px; text-decoration:None;">
+            Attendance
+          </button>
+        </h3>
+      
+        <div class="collapse show" id="dashboardCollapse2">
+          <div class="d-inline-flex gap-1">
+            <a href="{% url 'register' %}"  class= "bt"style=" border-radius: 5px; border-color: #87ceeb; font-size: x-large; color: black; text-decoration: none;">
+              User Register
+            </a>
+            
+          </div>
+          <div class="d-inline-flex gap-1">
+            <a href="{% url 'register' %}"  class= "bt"style=" border-radius: 5px; border-color: #87ceeb; font-size: x-large; color: black; text-decoration: none;">
+              User Register
+            </a>
+            
+          </div>
+          
+        </div>
+       
+        <h3>
+          <button class="btn btn-link text-white p-0" type="button" data-bs-toggle="collapse" data-bs-target="#dashboardCollapse3" aria-expanded="false" aria-controls="dashboardCollapse3" style="margin:10px; text-decoration:None;">
+            Notifications
+          </button>
+        </h3>
+      
+        <div class="collapse show" id="dashboardCollapse3">
+          <div class="d-inline-flex gap-1">
+            <a href="{% url 'register' %}"  class= "bt"style=" border-radius: 5px; border-color: #87ceeb; font-size: x-large; color: black; text-decoration: none;">
+              User Register
+            </a>
+            
+          </div>
+          <div class="d-inline-flex gap-1">
+            <a href="{% url 'register' %}"  class= "bt"style=" border-radius: 5px; border-color: #87ceeb; font-size: x-large; color: black; text-decoration: none;">
+              User Register
+            </a>
+            
+          </div>
+          
+        </div>
+        <h3>
+          <button class="btn btn-link text-white p-0" type="button" data-bs-toggle="collapse" data-bs-target="#dashboardCollapse4" aria-expanded="false" aria-controls="dashboardCollapse4" style="margin:10px; text-decoration:None;">
+            Update
+          </button>
+        </h3>
+      
+        <div class="collapse show" id="dashboardCollapse4">
+          <div class="d-inline-flex gap-1">
+            <a href="{% url 'register' %}"  class= "bt"style=" border-radius: 5px; border-color: #87ceeb; font-size: x-large; color: black; text-decoration: none;">
+              User Register
+            </a>
+            
+          </div>
+          <div class="d-inline-flex gap-1">
+            <a href="{% url 'register' %}"  class= "bt"style=" border-radius: 5px; border-color: #87ceeb; font-size: x-large; color: black; text-decoration: none;">
+              User Register
+            </a>
+            
+          </div>
+          
+        </div>
+        
+        <h3>
+          <button class="btn btn-link text-white p-0" type="button" data-bs-toggle="collapse" data-bs-target="#dashboardCollapse5" aria-expanded="false" aria-controls="dashboardCollapse5" style="margin:10px; text-decoration:None;">
+            Parent Register
+          </button>
+        </h3>
+      
+        <div class="collapse show" id="dashboardCollapse5">
+          <div class="d-inline-flex gap-1">
+            <a href="{% url 'Adminregister' %}"  class= "bt"style=" border-radius: 5px; border-color: #87ceeb; font-size: x-large; color: black; text-decoration: none;">
+              User Register
+            </a>
+            
+          </div>
+          <div class="d-inline-flex gap-1">
+            <a href="{% url 'register' %}"  class= "bt"style=" border-radius: 5px; border-color: #87ceeb; font-size: x-large; color: black; text-decoration: none;">
+              User Register
+            </a>
+            
+          </div>
+          
+        </div>
+
+       
+       
+        
+        
+        </div>
+      
+        <div class=" col-md-9 col-sm-12" style="background-color:rgb(216, 205, 205);">
+       
+          <div class="row" style="align-items: center; justify-content: center; "> 
+         <div class="col-12 col-sm-3 col-md-3 mb-3" style="background-color: #ffffff; margin:30px;align-items: center; border-radius:10px;  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);">
+                <a href="{%url 'DocReport'%}" style="text-decoration: none;  width: 100%;  padding: 10px; text-align: center;">
+                       
+                  <img src="{% static 'image/3d-report.png' %}" class="d-block  img-fluid" alt="Slide 3" style="height:100px;margin-left: 80px;">
+                  <p >Report</p>
+              
+               
+                
+                </a>
+            </div>
+            <div class="col-12 col-sm-3 col-md-3 mb-3" style="background-color: #ffffff; margin:30px;align-items: center; border-radius:10px;  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);">
+              <a href="{%url 'DocReport'%}" style="text-decoration: none;  width: 100%;  padding: 10px; text-align: center;">
+                     
+                <img src="{% static 'image/available.png' %}" class="d-block  img-fluid" alt="Slide 3" style="height:100px;margin-left: 80px;">
+                <p >Attendance</p>
+            
+             
+              
+              </a>
+          </div>
+          <div class="col-12 col-sm-3 col-md-3 mb-3" style="background-color: #ffffff; margin:30px;align-items: center; border-radius:10px;  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);">
+            <a href="{%url 'DocReport'%}" style="text-decoration: none;  width: 100%;  padding: 10px; text-align: center;">
+                   
+              <img src="{% static 'image/envelope.png' %}" class="d-block  img-fluid" alt="Slide 3" style="height:100px;margin-left: 80px;">
+              <p >Notification</p>
+          
+           
+            
+            </a>
+        </div>
+    
+        
+          
+          </div>
+         
+        
+     
+       <div class="row" style="align-items: center; margin: 20px;">
+        <div class="col-12 col-sm-3 col-md-3 mb-3" style="background-color: #ffffff; margin:30px;align-items: center; border-radius:10px;  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);">
+               <a href="{%url 'DocReport'%}" style="text-decoration: none;  width: 100%;  padding: 10px; text-align: center;">
+                      
+                 <img src="{% static 'image/refresh.png' %}" class="d-block  img-fluid" alt="Slide 3" style="height:100px;margin-left: 80px;">
+                 <p >Update</p>
+             
+              
+               
+               </a>
+           </div>
+           <div class="col-12 col-sm-3 col-md-3 mb-3" style="background-color: #ffffff; margin:30px;align-items: center; border-radius:10px;  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);">
+            <a href="{%url 'Adminregister'%}" style="text-decoration: none;  width: 100%;  padding: 10px; text-align: center;">
+                   
+              <img src="{% static 'image/add-user.png' %}" class="d-block  img-fluid" alt="Slide 3" style="height:100px;margin-left: 80px;">
+              <p >Admin register</p>
+          
+           
+            
+            </a>
+        </div>
+           
+     
+   
+       
+         
+         </div>
+        
+       
+      </div>
+      </div>
+     </div>
+   
+    
+
+ 
+
+
+</body>
+</html>
+<script>
+  const collapseElementList = document.querySelectorAll('.collapse')
+const collapseList = [...collapseElementList].map(collapseEl => new bootstrap.Collapse(collapseEl))
+function toggleContent(id){
+  const sections = ['report','Notification','Attendance'];
+  
+  sections.forEach(sectionId => {
+  const section = document.getElementById(sectionId);
+  if (sectionId === id){
+      section.style.display = section.display ==='block'? 'none' : 'block';
+    } else{
+      section.style.display = 'none';
+    }
+    
+  });
+}
+
+</script>
+

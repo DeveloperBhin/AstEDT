@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <style>
+        /* Navbar styles */
+        .main-navbar {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('{% static "image/images.jpg" %}');
+            background-size: cover;
+            background-position: center;
+            z-index: 10; /* Ensures navbar is on top */
+        }
+
+        .navbar-content {
+            text-align: center;
+            color:white;
+        }
+
+        .navbar-text {
+            color: white;
+            margin: 0;
+            font-size: 20px;
+            
+        }
+    </style>
+</head>
+<body style="background-color:#ccc; margin-top: 100px;">
+    <div class="main-navbar">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" >
+            <div class="container">
+              <!-- Logo on the Left -->
+              
+           
+              
+          
+              
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+          
+              <!-- Links and Login Button -->
+              <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="nav">
+               
+                 
+                 
+                  <li class="nav-item" style="background-color: #ccc; border-radius:5px;">
+                    <a class="nav-link" href="{% url 'AdminLogin'%}">Admin</a>
+                  </li>
+                </ul>
+                
+              
+            </div>
+          </nav>
+        <div class="navbar-content">
+            <h3 class="navbar-title">
+                <p class="navbar-text"><i>CHILDREN'S CLINIC ATTENDANCE RECORD MANAGEMENT INFORMATION SYSTEM</i></p>
+                <p class="navbar-text"><i>CCARMIS</i></p>
+            </h3>
+        </div>
+    </div>
+</body>
+</html>

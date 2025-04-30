@@ -1,0 +1,169 @@
+{% load static %}
+{% include "header.html"%}
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+ 
+
+   
+    <style>
+        :root {
+            --primary-bg: #D9D9D9;
+            --secondary-bg: #CDC2A5;
+            --primary-color: darkorange;
+            --hover-bg: #310202;
+            --sidebar-bg: #155B7A;
+            --footer-bg: #ffffff;
+        }
+
+        .same-height {
+            height: 100vh;
+            object-fit: cover;
+            border-radius: 5px;
+          }
+        
+          /* Style the overlay text */
+          .overlay-text {
+            position: relative;
+            top: -70%;      /* Center vertically */
+            left: 50%;     /* Center horizontally */
+            transform: translate(-50%, -50%);
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Shadow for better readability */
+            text-align: center;
+          }
+        
+          .position-relative {
+            border-radius: 5px;
+            overflow: hidden; /* Ensure text stays inside the container */
+          }
+          a.no-underline {
+            text-decoration: none; /* Removes the underline */
+        }
+        .form-control {
+          transition: border-color 0.3s ease-in-out;
+        }
+        
+        .form-control:hover {
+          border-color: #007bff; /* Change border color on hover */
+          box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5); /* Add a glowing effect */
+        }
+        .news-ticker {
+          white-space: nowrap;
+          overflow: hidden;
+          display: block;
+      }
+      
+      .news-ticker p {
+          display: inline-block;
+          animation: ticker 10s linear infinite;
+      }
+      
+      @keyframes ticker {
+          from { transform: translateX(100%); }
+          to { transform: translateX(-100%); }
+      }
+    </style> 
+</head>
+
+
+<body>
+  {% for message in messages %}
+  <p>{{ message }}</p>
+{% endfor %}
+
+
+  <div class="row " style="margin-top:60px;" >
+    <div class="row" style="padding: 1px; margin:1px;">
+      <div class="news-ticker">
+   </div>
+   
+ <div class="container mt-4 my-30 text-center" > 
+   <div class="card " style="padding:20px; margin:20px; ">
+    
+         
+
+      
+
+  
+    
+      <!-- No error display for password1 -->
+   
+    <h3 class="text-center" style="color:#87ceeb ">Register Here</h3>
+    <form method="post" enctype="multipart/form-data" >
+     
+     <div class="row">
+      
+   
+      <div class="col-md-5 col-sm-12" style="margin:5px;">
+        {% csrf_token %}
+        <div class="row mb-3 "style="margin-top: 5px;   padding: 10px; border-radius: 10px; width: 100%;" >
+          <label for="id_fullname" class="form-label d-flex start">First Name:</label>
+            {{ Adminpg.Firstname }}
+            
+        </div>
+        <div class="row mb-3 "style="margin-top: 5px;   padding: 10px; border-radius: 10px; width: 100%;" >
+          <label for="id_course" class="form-label d-flex start">Middle Name:</label>
+            {{ Adminpg.Middlename }}
+            
+        </div>
+        <div class="row mb-3 "style="margin-top: 5px;   padding: 10px; border-radius: 10px; width: 100%;" >
+          <label for="id_year" class="form-label d-flex start">Last Name:</label>
+            {{ Adminpg.Lastname }}
+          
+        </div>
+        <div class="row mb-3 "style="margin-top: 5px;   padding: 10px; border-radius: 10px; width: 100%;" >
+          <label for="id_experience" class="form-label d-flex start">Role:</label>
+            {{ Adminpg.Role }}
+           
+        </div>
+        <div class="row mb-3 "style="margin-top: 5px;   padding: 10px; border-radius: 10px; width: 100%;" >
+          <label for="id_experience" class="form-label d-flex start">Username:</label>
+            {{ Adminpg.username }}
+           
+        </div>
+        <div class="row mb-3 "style="margin-top: 5px;   padding: 10px; border-radius: 10px; width: 100%;" >
+          <label for="id_experience" class="form-label d-flex start">Password:</label>
+            {{ Adminpg.password }}
+           
+        </div>
+      </div>
+    </div>
+      
+
+
+        <div class="">
+            <button type="submit" class="button" style="background-color: #87ceeb; border-radius: 5px; border-color:#87ceeb; font-size:x-large;">Register</button>
+        </div>
+     
+    </form>
+
+       
+    
+     
+
+  </div>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+  </div>
+        
+             
+         
+  
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+
+</html>
